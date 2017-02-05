@@ -10,7 +10,7 @@ $(document).ready(function() {
 		index--;
 		findAddress(index, "");
 	});
-/*
+
 	$('#submit_ingredient').click(function() {
 		$.ajax({
 			url: "http://localhost:8080/submit",
@@ -21,13 +21,18 @@ $(document).ready(function() {
 			}
 		});
 	};
-*/
+
 	$("#location_form").submit(function(e) {
 		e.preventDefault();
 		var address = $('#location').val();
 		$('#location').val("");
 		console.log(address);
 		findAddress(0, address);
+	});
+
+	$('#list_form input[type=checkbox]').checked(function() {
+		var name = this.id.replace(/_/g, ' ');
+		console.log(name);
 	});
 });	
 
@@ -41,11 +46,13 @@ function findAddress(index, address) {
 			type: 'POST',
 			data: { "addr": address },
 			success: function(closest) {
-				console.log(closest);
-				for (var item in inventory) {
-					$('#list_form').append('<input type="checkbox" name="item" class="item">' + 
-					item.text + '<br>');
-				}
+				closest.inventory.forEach(function(item) {
+					var name = item.text.replace(/ /g, '_');
+					$('#list_form').append('<input type="checkbox" name="item" class="item" id="' +
+					name + '">' + '<p>' + name + '</p><br>');
+				});
+				$('#provider').val("Products from" + closest.name);
+
 			}
 		});
 
@@ -56,11 +63,13 @@ function findAddress(index, address) {
 			type: 'POST',
 			data: { "index": index },
 			success: function(closest) {
-				console.log(closest);
-				for (var item in inventory) {
-					$('#list_form').append('<input type="checkbox" name="item" class="item">' + 
-					item.text + '<br>');
-				}
+				closest.inventory.forEach(function(item) {
+					var name = item.text.replace(/ /g, '_');
+					$('#list_form').append('<input type="checkbox" name="item" class="item" id="' +
+					name + '">' + '<p>' + name + '</p><br>');
+
+				});
+				$('#provider').val("Products from" + closest.name);
 			}
 		});
 
