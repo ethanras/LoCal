@@ -141,6 +141,7 @@ a:hover {
 #recipe_list{
 	font-family: arial;
 	font-size: 18px;
+	padding-right:2em;
 }
 
 
@@ -437,4 +438,26 @@ a:hover {
 	position: relative;
 	bottom: 2.5em;
 	margin-bottom: 0;
+}
+
+.stat{
+	margin-right:1.5em;
+}
+
+#food_pyramid{
+	display:block;
+	margin:auto;
+}
+
+#edit_info {
+	bottom: 5.5em;
+	left: 26.5em;
+}
+
+#left_info, #right_info {
+	display:inline-block;
+}
+
+#left_info{
+	margin-right:8em;
 }
