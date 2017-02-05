@@ -3,6 +3,7 @@ package com.spork.service;
 import com.spork.model.EdamamHits;
 import com.spork.model.EdamamResponse;
 import com.spork.model.Recipe;
+import com.spork.model.RecipeRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -28,8 +29,8 @@ public class EdamamService {
         this.restTemplate = restTemplate;
     }
 
-    private List<Recipe> getRecipesForIngredients(String ingredientString){
-        String searchURL = RECIPE_URL + "q=" + ingredientString + "&app_id=" + API_ID + "&app_key=" + APP_KEY;
+    private List<Recipe> getRecipesForIngredients(RecipeRequest request){
+        String searchURL = RECIPE_URL + "q=" + request.getIngredientList() + "&healthLabel=" + request.getHealthLabels() + "&app_id=" + API_ID + "&app_key=" + APP_KEY;
         try {
             URI searchURI = new URI(searchURL);
             ResponseEntity<EdamamResponse> response = restTemplate.getForEntity(searchURI, EdamamResponse.class);
@@ -39,7 +40,7 @@ public class EdamamService {
         return Collections.emptyList();
     }
 
-    public List<Recipe> getRecipesForAllIngredients(String ingredients) {
-        return getRecipesForIngredients(ingredients);
+    public List<Recipe> getRecipesForAllIngredients(RecipeRequest request) {
+        return getRecipesForIngredients(request);
     }
 }

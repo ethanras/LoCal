@@ -3,6 +3,7 @@ package com.spork;
 import com.spork.model.FarmMock;
 import com.spork.model.Ingredient;
 import com.spork.model.Recipe;
+import com.spork.model.RecipeRequest;
 import com.spork.service.EdamamService;
 import com.spork.service.FarmProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +37,9 @@ public class ApplicationController {
 
     @CrossOrigin
     @GetMapping("/recipes")
-    public @ResponseBody List<Recipe> test(@RequestParam(value="ingredients", required=false, defaultValue ="-1")String ingredients) {
-        return edamamService.getRecipesForAllIngredients(ingredients);
+    public @ResponseBody List<Recipe> test(@RequestParam(value="ingredientList", required=false) String ingredientList,
+                                           @RequestParam(value="healthLabels", required=false)String healthLabels) {
+        return edamamService.getRecipesForAllIngredients(new RecipeRequest(ingredientList, healthLabels));
     }
 
     @CrossOrigin
@@ -50,15 +52,4 @@ public class ApplicationController {
         }
         return farmProvider.getSortedListOfFarmsByDistance(addr);
     }
-
-//
-//    @CrossOrigin
-//    @PutMapping("/submit")
-//    public @ResponseBody List<Recipe> getRecipes(List<String> ingredients) {
-//        ArrayList<Ingredient> ingredientsListFromString = new ArrayList<Ingredient>();
-//        for (String s : ingredients) {
-//            ingredientsListFromString.add(new Ingredient(s));
-//        }
-//        return edamamService.getRecipesForAllIngredients((List_) ingredientsListFromString);
-//    }
 }

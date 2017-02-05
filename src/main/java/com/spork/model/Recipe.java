@@ -18,11 +18,11 @@ public class Recipe {
     public String url;
     public String shareAs;
     public Integer yield;
-//    public List<healthLabels> healthLabels = null;
     public List<String> ingredientLines = null;
     public List<Ingredient> ingredients = null;
     public Float calories;
     public Float totalWeight;
-//  public ArrayList<NutrientInfo> totalNutrients;
+//  public ArrayList<NutrientInfo> totalNutrients;te 600”, “gte
 //    public ArrayList<NutrientInfo> totalDaily;
+
 }

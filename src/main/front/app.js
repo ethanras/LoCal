@@ -1,55 +1,55 @@
 var ingredients = [];
-var ownedIngredients =[];
+var ownedIngredients = [];
 var map;
 
-$(document).ready(function() {
-	var index = 0;
-	update();
-	$('#list_form').empty();
+$(document).ready(function () {
+    var index = 0;
+    update();
+    $('#list_form').empty();
     $('#recipe_list').empty();
-	initMap();
+    initMap();
 
-	$('#next').click(function(e) {
+    $('#next').click(function (e) {
         e.preventDefault();
-		if (index < 2) {
-			index++;
-		}
+        if (index < 2) {
+            index++;
+        }
         findAddress(index, "");
-	});
+    });
 
-	$('#previous').click(function(e) {
+    $('#previous').click(function (e) {
         e.preventDefault();
         if (index > 0) {
             index--;
-    	}
+        }
         findAddress(index, "");
-	});
+    });
 
-	$('#submit_recipe').click(function(e) {
-		e.preventDefault();
-		var arr = [];
-        $('#recipe_ingredients input:checked').each(function(){
-			var elem = $(this).attr("id").replace(/_/g, ' ');
-			elem = elem.slice(0, -1);
+    $('#submit_recipe').click(function (e) {
+        e.preventDefault();
+        var arr = [];
+        $('#recipe_ingredients input:checked').each(function () {
+            var elem = $(this).attr("id").replace(/_/g, ' ');
+            elem = elem.slice(0, -1);
             arr.push(elem);
         });
-		getRecipes(arr);
-	});
+        getRecipes(arr);
+    });
 
-	$('#submit_ingredient').click(function(e) {
-		e.preventDefault();
+    $('#submit_ingredient').click(function (e) {
+        e.preventDefault();
         var prod = $('#ingredient').val();
         $('#ingredient').val("");
-		ownedIngredients.push(prod);
-		update();
-	});
+        ownedIngredients.push(prod);
+        update();
+    });
 
-	$("#location_form").submit(function(e) {
-		e.preventDefault();
-		var address = $('#location').val();
-		$('#location').val("");
-		findAddress(0, address);
-	});
+    $("#location_form").submit(function (e) {
+        e.preventDefault();
+        var address = $('#location').val();
+        $('#location').val("");
+        findAddress(0, address);
+    });
 });
 
 function initMap() {
@@ -65,32 +65,33 @@ function initMap() {
 
 function addMarker(addr) {
     var geocoder = new google.maps.Geocoder();
-	if (geocoder) {
-		geocoder.geocode({ 'address': addr}, function(results, status) {
+    if (geocoder) {
+        geocoder.geocode({'address': addr}, function (results, status) {
 
-			var marker = new google.maps.Marker({
-				position: results[0].geometry.location,
-				map: map
-			});
-		});
-	}
+            var marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map: map
+            });
+        });
+    }
 }
 
 function update() {
 
-	$('#produce_form').empty();
-	$('#recipe_ingredients').empty();
-	for (var i = 0; i < ingredients.length; i++) {
+    $('#produce_form').empty();
+    $('#recipe_ingredients').empty();
+    for (var i = 0; i < ingredients.length; i++) {
         $('#produce_form').append('<input type="checkbox" name="item" class="item">'
             + ingredients[i]);
         var id = ingredients[i].replace(/ /g, '_');
         $('#recipe_ingredients').append('<input type="checkbox" name="item" class="item" id="' +
             id + '2">' + ingredients[i]);
-	}
-	for (var i = 0; i < ownedIngredients.length; i++) {
+    }
+    for (var i = 0; i < ownedIngredients.length; i++) {
+        var id = ownedIngredients[i].replace(/ /g, '_');
         $('#recipe_ingredients').append('<input type="checkbox" name="item" class="item" id="' +
             id + '2">' + ownedIngredients[i]);
-	}
+    }
 }
 
 function checkProduct(closest) {
@@ -99,21 +100,21 @@ function checkProduct(closest) {
 
     addMarker(closest.location);
 
-    closest.inventory.forEach(function(item) {
+    closest.inventory.forEach(function (item) {
         var id = item.text.replace(/ /g, '_');
         $('#list_form').append('<input type="checkbox" name="item" class="item" id="' +
             id + '1">' + item.text + '<br>');
         for (var i = 0; i < ingredients.length; i++) {
             if (ingredients[i] === item.text) {
-            	$('#' + id + '1')[0].checked = true;
-			}
+                $('#' + id + '1')[0].checked = true;
+            }
         }
     });
 
 
     $('#provider').html("Products from " + closest.name);
 
-    $('#list_form input').click(function() {
+    $('#list_form input').click(function () {
         var id = $(this).attr("id");
         id = id.slice(0, -1);
         var name = id.replace(/_/g, ' ');
@@ -132,44 +133,64 @@ function checkProduct(closest) {
 
 function findAddress(index, address) {
 
-	if (address !== "") {
-		address = address.replace(/ /g, '+');
+    if (address !== "") {
+        address = address.replace(/ /g, '+');
 
-		$.ajax({
-			url: "http://localhost:8080/find",
-			type: 'POST',
-			data: { "addr": address },
-			success: checkProduct
-		});
+        $.ajax({
+            url: "http://localhost:8080/find",
+            type: 'POST',
+            data: {"addr": address},
+            success: checkProduct
+        });
 
-	} else {
+    } else {
 
-		$.ajax({
-			url: "http://localhost:8080/find",
-			type: 'POST',
-			data: { "index": index },
-			success: checkProduct
-		});
-	}
+        $.ajax({
+            url: "http://localhost:8080/find",
+            type: 'POST',
+            data: {"index": index},
+            success: checkProduct
+        });
+    }
 }
 
 function getRecipes(arr) {
-	var request = "";
-	for (var i = 0; i < arr.length; i++) {
-		request = request + arr[i] + ',';
+    var request = "";
+    for (var i = 0; i < arr.length; i++) {
+        request = request + arr[i] + ',';
     }
+    var constraints = "";
+    if ($('#gluten_free').is(':checked')) {
+        constraints = constraints + "Gluten-Free,";
+    }
+    if ($('#shellfish_free').is(':checked')) {
+        constraints = constraints + "Shellfish-Free,";
+    }
+    if ($('#dairy_free').is(':checked')) {
+        constraints = constraints + "Dairy-Free";
+    }
+    $('#gluten_free').checked = false;
+    $('#shellfish_free').checked = false;
+    $('#dairy_free').checked = false;
 
-	$('#recipe_list').empty();
+    $('#recipe_list').empty();
+
     $.ajax({
         url: "http://localhost:8080/recipes",
         type: 'GET',
-        data: { "ingredients" : request },
-        success: function(recipeList) {
-        	recipeList.forEach(function(item) {
-        		$('#recipe_list').append('<li class="recipe"><a target="_blank" href="' +
-					item.url + '">' + item.label + '</a></li>');
+        data: {
+            "ingredientList": request,
+            "healthLabels": constraints
+        },
+        success: function (recipeList) {
+            recipeList.forEach(function (item) {
+                $('#recipe_list').append('<li class="recipe"><a target="_blank" href="' +
+                    item.url + '">' + item.label + '</a></li>');
 
-			});
+            });
+        },
+        error: function () {
+            alert("No recipe meets your requirements");
         }
     });
 }
