@@ -1,0 +1,96 @@
+body{
+	margin:0;
+}
+
+.fa {
+	margin-right:0.5em;
+}
+.banner {
+	background-color: #f3fcfb;
+	max-width:100%;
+}
+
+#banner_image{
+	width:40%;
+	height:40%;
+	max-width:40%;
+	min-width:40%;
+	display:inline-block;
+	box-sizing: border-box;
+	margin: 1em;
+}
+
+#banner_title{
+	font-size:75px;
+	font-family: sans-serif;
+	display:inline-block;
+	position:relative;
+	margin:0;
+	bottom:1em;
+	left:4em;
+}
+
+.banner_description{
+	box-sizing:border-box;
+	width:56%;
+	max-width: 56%;
+	min-width:56%;
+	display: inline-block;
+	font-size:40px;
+	font-family:sans-serif;
+}
+
+#banner_description{
+	position: relative;
+	bottom: 2em;
+	left: 6em;
+}
+
+.links {
+	margin-left:5em;
+}
+
+#account, #preferences{
+	display:inline-block;
+	font-size:25px;
+	margin-right:3em;
+}
+
+#preferences{
+
+}
+
+#list_form{
+	font-size:25px;
+	font-family:arial;
+}
+
+.list{
+	width:30%;
+	max-width:30%;
+	min-width:30%;
+	display:inline-block;
+	box-sizing:border-box;
+	margin:3em;
+	background-color: #f4f4f4;
+	padding:5em;
+}
+
+#list_header{
+	font-size:35px;
+	font-family:sans-serif;
+}
+
+.item {
+	margin-bottom:1em;
+	margin-right:1em;
+}
+
+.details{
+	width:70%;
+	max-width: 30%;
+	min-width:30%;
+	display:inline-block;
+	box-sizing:border-box;
+}
+
