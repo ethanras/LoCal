@@ -48,7 +48,7 @@ public class FarmProvider {
         for (FarmMock f: farms) {
             String url = GMAPS_URL + addr + "&destinations=" + f.getLocation() + "&key=" + GMAPS_API_KEY + "&callback=?";
             ResponseEntity<googleMapsResponse> response = restTemplate.getForEntity(url, googleMapsResponse.class);
-            f.setDistance(response.getBody().getRows().getElements().get(0).getDistance().getValue());
+            f.setDistance(response.getBody().getRows().get(0).getElements().get(0).getDistance().getValue());
         }
         farms.sort(Comparator.comparingInt(FarmMock::getDistance));
         return farms.get(0);
