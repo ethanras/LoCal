@@ -1,30 +1,30 @@
 package com.spork;
 
+import com.spork.model.FarmMock;
 import com.spork.model.Ingredient;
 import com.spork.model.Recipe;
 import com.spork.service.EdamamService;
+import com.spork.service.FarmProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
 public class ApplicationController {
 
     private EdamamService edamamService;
+    private FarmProvider farmProvider;
     private RestTemplate restTemplate;
 
     @Autowired
-    public ApplicationController(EdamamService edamamService, RestTemplate restTemplate) {
+    public ApplicationController(EdamamService edamamService, FarmProvider farmProvider, RestTemplate restTemplate) {
         this.edamamService = edamamService;
+        this.farmProvider = farmProvider;
         this.restTemplate = restTemplate;
     }
 
@@ -35,18 +35,30 @@ public class ApplicationController {
     }
 
     @CrossOrigin
-    @GetMapping("/test")
-    public @ResponseBody List<Recipe> test() {
-        Ingredient potato = new Ingredient("potato");
-        Ingredient leek = new Ingredient("leek");
-        return edamamService.getRecipesForAllIngredients(potato, Arrays.asList(leek));
+    @GetMapping("/recipes")
+    public @ResponseBody List<Recipe> test(@RequestParam(value="ingredients", required=false, defaultValue ="-1")String ingredients) {
+        return edamamService.getRecipesForAllIngredients(ingredients);
     }
 
     @CrossOrigin
-    @GetMapping("/ethansshit")
-    public @ResponseBody String ethan() {
-        ResponseEntity<String> response = restTemplate.exchange("https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=256+Philip+Street+Waterloo+ON&destinations=18+Foreht+Crescent+Aurora+ON&key=AIzaSyDontXg9FANm3AbQIxs7ysmgIvjKw3yLJM&callback=?",
-                HttpMethod.GET, HttpEntity.EMPTY, String.class );
-        return response.getBody();
+    @PostMapping("/find")
+    public @ResponseBody
+    FarmMock returnString(@RequestParam(value="index", required=false, defaultValue ="-1") Integer index,
+                          @RequestParam(value="addr", required=false) String addr) {
+        if (index >= 0) {
+            return farmProvider.provideIndex(index);
+        }
+        return farmProvider.getSortedListOfFarmsByDistance(addr);
     }
+
+//
+//    @CrossOrigin
+//    @PutMapping("/submit")
+//    public @ResponseBody List<Recipe> getRecipes(List<String> ingredients) {
+//        ArrayList<Ingredient> ingredientsListFromString = new ArrayList<Ingredient>();
+//        for (String s : ingredients) {
+//            ingredientsListFromString.add(new Ingredient(s));
+//        }
+//        return edamamService.getRecipesForAllIngredients((List_) ingredientsListFromString);
+//    }
 }
