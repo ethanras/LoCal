@@ -79,21 +79,24 @@ a:hover {
 	margin-right:3em;
 }
 
+#green_separator{
+	background-color:#009900;
+	height:1em;
+}
+
 #list_form, #produce-form{
 	font-size:18px;
 	font-family:arial;
 	display:inline-block;
 }
 
-.list{
-	width:31%;
-	max-width:31%;
-	min-width:31%;
-	display:inline-block;
+.recipe_section{
+	width:93%;
+	max-width:93%;
+	min-width:93%;
 	box-sizing:border-box;
 	margin:3em;
 	background-color: #f4f4f4;
-	padding:4em;
 }
 
 .second_h{
@@ -120,6 +123,10 @@ a:hover {
 	font-size: 15px;
 	font-family: arial;
 	margin-top: 1em;
+	border: 3px solid #009900;
+	border-radius: 12px;
+	font-weight: bold;
+	background-color: white;
 }
 
 .fourth_h{
@@ -128,17 +135,17 @@ a:hover {
 }
 
 #recipes{
-	margin-top: 3em;
+	margin-top: 2em;
 }
 
 #recipe_list{
 	font-family: arial;
-	font-size: 17px;
+	font-size: 18px;
 }
 
 
 .item {
-	margin-bottom:1em;
+	margin-bottom:1.25em;
 	margin-right:1em;
 	margin-left:1em;
 }
@@ -158,25 +165,29 @@ a:hover {
 }
 
 .farm_search{
-	width: 50%;
+	width: 58%;
 	display: inline-block;
-	max-width: 50%;
-	min-width: 50%;
+	max-width: 58%;
+	min-width: 58%;
 	margin: 3em;
-	margin-left:1em;
-	padding:4em;
-	padding-top:1em;
-	padding-right:0;
-	vertical-align:top;
+	margin-left: 0;
+	padding: 4em;
+	padding-top: 1em;
+	padding-right: 0;
+	vertical-align: top;
+	margin-bottom: 0;
+	margin-right: 2em;
 }
 
 .right_bar{
 	display: inline-block;
-	width: 31%;
-	max-width: 31%;
-	min-width: 31%;
+	width: 29%;
+	max-width: 29%;
+	min-width: 29%;
 	padding: 3em;
 	padding-top: 10em;
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .math{
@@ -198,11 +209,16 @@ a:hover {
 #submit_location{
 	height: 2.25em;
 	font-size: 15px;
+	border: 3px solid #009900;
+	border-radius: 12px;
+	font-weight: bold;
+	background-color: white;
 }
 
 #location{
 	width: 22em;
 	height: 2em;
+	text-align:center;
 }
 
 #map{
@@ -226,16 +242,29 @@ a:hover {
 }
 
 #produce_instructions{
-	text-align: center;
+	text-align: left;
 	font-style: italic;
 	font-size: 17px;
 	font-family:arial;
-	margin-bottom:2em;
+	margin-bottom:1em;
 }
 
-#produce_form{
+#produce_form, #recipe_ingredients{
 	font-family: arial;
-	font-size: 17px;
+	font-size: 18px;
+}
+
+#ingredient_selection {
+	text-align:center;
+	font-family: arial;
+	font-size: 22px;
+}
+
+#add_ingredient{
+	display: inline-block;
+	margin-right: 2em;
+	font-size:20px;
+	font-family:arial;
 }
 
 .bottom_section {
@@ -251,12 +280,55 @@ a:hover {
 }
 
 .blue{
-	background-color: #f3fcfb;
+	background-color: #ffffff;
 	padding: 1em;
 	margin-bottom: 1em;
+	border: 3px solid #009900;
 }
 
 .bottom_blurbs{
 	font-size:17px;
 	font-family:arial;
+}
+
+.grocery_list {
+	background-color: #f4f4f4;
+	margin:3em;
+	margin-top:1em;
+	padding:4em;
+}
+
+#shopping_items{
+	display:inline-block;
+}
+
+#total{
+	display:inline-block;
+	border-bottom:1px solid black;
+	font-family:arial;
+	font-size:18px;
+	margin-left:6em;
+	margin-right:4em;
+}
+
+#submit_order {
+	font-family: arial;
+	font-size: 17px;
+	border: 3px solid #009900;
+	border-radius: 12px;
+	font-weight: bold;
+	background-color: white;
+}
+
+#recipe_right{
+	margin-top: 5em;
+	background-color: #ffffff;
+	padding: 1em;
+	padding-left: 2em;
+	padding-right: 0;
+	border: 3px solid #009900;
+}
+
+#recipe_ingredients{
+	text-align:center;
 }

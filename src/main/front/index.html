@@ -23,6 +23,8 @@
 		</div>
 	</section>
 
+	<div id="green_separator"></div>
+
 	<section>
 		<article id="food_search">
 			<div class="farm_search">
@@ -56,7 +58,7 @@
 
 			<div class="right_bar">
 				<h3 class="third_h">Products from Location Name Currently Selected From Map</h3>
-				<p id="produce_instructions">Please select the items you want added to your list</p>
+				<p id="produce_instructions">Please select the items you want added to your shopping cart</p>
 				<form id="list_form">
 					<input type="checkbox" name="item" class="item">Cabbage ($3.99) 
 					<br>
@@ -85,39 +87,55 @@
 			</div>
 		</article>
 
-		<article>
-				<h2 class="second_h">Grocery List</h2>
+		<article class="grocery_list">
+			<div id="shopping_items">	
+				<h2 class="second_h">Shopping Cart</h2>
 				<form id="produce_form">
-					<input type="checkbox" name="item" class="item">Cabbage
-					<br>
-					<input type="checkbox" name="item" class="item">Pepper
-					<br>
-					<input type="checkbox" name="item" class="item">Leeks
-					<br>
-					<input type="checkbox" name="item" class="item">Dirt
-					<br>
-					<input type="checkbox" name="item" class="item">Mushroom
-					<br>
+					<input type="checkbox" name="item" class="item">Cabbage (1)
+					<input type="checkbox" name="item" class="item">Pepper (3)
+					<input type="checkbox" name="item" class="item">Leeks (1)
+					<input type="checkbox" name="item" class="item">Dirt (5)
+					<input type="checkbox" name="item" class="item">Mushroom (7)
+					<p id="total">Total: $900.00</p>					
 					<input type="submit" value="Checkout" id="submit_order">
 				</form>
+			</div>
 		</article>
 	</section>
 
+<div id="green_separator"></div>
 	<section>
-			<article class="list">
-			<h3 class="third_h">Select your ingredients:</h3>
-			<form id="meal_form">
-				<input type="text" name="meal" id="ingredient">
-				<input type="submit" value="Submit" id="submit_ingredient">
-			</form>	
-			<h4 class="fourth_h" id="recipes">Your recipies for today:</h4>
-			<ol id="recipe_list">
-				<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Butternut Squash Soup</a></li>
-				<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Cream of Mushroom Soup</a></li>
-				<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Some Other Soup</a></li>
-			</ol>	
+			<article class="recipe_section">
+			<div class="farm_search">
+				<h2 class="second_h">Recipe Maker</h2>
+				<h3 class="third_h" id="ingredient_selection">Select your Ingredients</h3>
+				<form id="recipe_ingredients">
+					<input type="checkbox" name="item" class="item">Cabbage
+					<input type="checkbox" name="item" class="item">Pepper
+					<input type="checkbox" name="item" class="item">Leeks
+					<input type="checkbox" name="item" class="item">Dirt
+					<input type="checkbox" name="item" class="item">Mushroom
+				</form>
+
+				<form id="meal_form">
+					<p id="add_ingredient">Add more ingredients:</p>
+					<input type="text" name="meal" id="ingredient">
+					<input type="submit" value="Add Ingredient" id="submit_ingredient">
+				</form>	
+			</div>
+
+			<div class="right_bar" id="recipe_right">
+				<h4 class="fourth_h" id="recipes">Your recipies for today:</h4>
+				<ol id="recipe_list">
+					<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Butternut Squash Soup</a></li>
+					<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Cream of Mushroom Soup</a></li>
+					<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Some Other Soup</a></li>
+				</ol>	
+			</div>
 		</article>
 	</section>
+
+<div id="green_separator"></div>
 
 	<section>
 		<div class="bottom_section">
