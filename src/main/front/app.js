@@ -15,12 +15,12 @@ $(document).ready(function() {
 		$.ajax({
 			url: "http://localhost:8080/submit",
 			type: 'POST',
-			data: { "ingredients" : "blah" }
+			data: { "ingredients" : "blah" },
 			success: function(recipeList) {
 				console.log(recipeList);
 			}
 		});
-	};
+	});
 
 	$("#location_form").submit(function(e) {
 		e.preventDefault();
@@ -28,11 +28,6 @@ $(document).ready(function() {
 		$('#location').val("");
 		console.log(address);
 		findAddress(0, address);
-	});
-
-	$('#list_form input[type=checkbox]').checked(function() {
-		var name = this.id.replace(/_/g, ' ');
-		console.log(name);
 	});
 });	
 
@@ -49,10 +44,17 @@ function findAddress(index, address) {
 				closest.inventory.forEach(function(item) {
 					var name = item.text.replace(/ /g, '_');
 					$('#list_form').append('<input type="checkbox" name="item" class="item" id="' +
-					name + '">' + '<p>' + name + '</p><br>');
+					name + '">' + item.text);
 				});
 				$('#provider').val("Products from" + closest.name);
 
+                $('#list_form input').click(function() {
+                    if ($(this).is(":checked")) {
+                        var name = $(this).attr("id").replace(/_/g, ' ');
+                        $('#produce_form').append('<input type="checkbox" name="item" class="item">'
+                            + name);
+                    }
+                });
 			}
 		});
 
@@ -66,12 +68,19 @@ function findAddress(index, address) {
 				closest.inventory.forEach(function(item) {
 					var name = item.text.replace(/ /g, '_');
 					$('#list_form').append('<input type="checkbox" name="item" class="item" id="' +
-					name + '">' + '<p>' + name + '</p><br>');
+                        name + '">' + name);
 
 				});
 				$('#provider').val("Products from" + closest.name);
+
+                $('#list_form input').click(function() {
+                    if ($(this).is(":checked")) {
+                        var name = $(this).attr("id").replace(/_/g, ' ');
+                        $('#produce_form').append('<input type="checkbox" name="item" class="item">'
+                            + name);
+                    }
+                });
 			}
 		});
-
 	}
 }
