@@ -1,40 +1,54 @@
 $(document).ready(function() {
-/*
-	$.ajax("http://localhost:8080/", {
-		datatype: 'json',
-		success: function(dogshitFromBryan) {
-			console.log(dogshitFromBryan);
-		}
+	var index = 1;
+
+	$('#next').click(function() {
+		index++;
+		findAddress(index, "");
 	});
 
-	$.ajax({
-		url: "http://localhost:8080/",
-		type: 'PUT',
-		data: { "ingredients" : "blah" }
+	$('#previous').click(function() {
+		index--;
+		findAddress(index, "");
 	});
-*/
 
-
-/*
-		var googleAPIKey = "AIzaSyBn9CD8FowWeOi_mf2BfL1eh7_09G9H9bU";
-		var source = "256+Philip+Street+Waterloo+ON";
-		var destination = "18+Foreht+Crescent+Aurora+ON";
-		var url = "https://maps.googleapis.com" + 
-					"/maps/api/distancematrix/json?units=metric&origins=" +
-					source + "&destinations=" + destination +
-					"&key=" + googleAPIKey + "&callback=?";
+	$('#submit_ingredient').click(function() {
+		$.ajax({
+			url: "http://localhost:8080/submit",
+			type: 'POST',
+			data: { "ingredients" : "blah" }
+			success: function(recipeList) {
+				console.log(recipeList);
+			}
+		});
+	};
 */
 	$("#location_form").submit(function(e) {
 		e.preventDefault();
 		var address = $('#location').val();
 		$('#location').val("");
 		console.log(address);
-/*
-		$.ajax({
-			url: "http://localhost:8080/",
-			type: 'PUT',
-			data: { "googleURL" : address }
-		});
-*/
+		findAdress(0, address);
 	});
 });	
+
+function findAddress(index, address) {
+	if (index === 0) {
+		$.ajax({
+			url: "http://localhost:8080/find",
+			type: 'POST',
+			data: { "addr": address },
+			success: function(closest) {
+				console.log(closest);
+			}
+		});
+	} else {
+		$.ajax({
+			url: "http://localhost:8080/find",
+			type: 'POST',
+			data: { "index": index },
+			success: function(closest) {
+				console.log(closest);
+			}
+		});
+	}
+}
