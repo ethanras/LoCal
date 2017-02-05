@@ -436,7 +436,7 @@ a:hover {
 	margin-left: 2em;
 	margin-right: 2.25em;
 	position: relative;
-	bottom: 2.5em;
+	bottom: 2em;
 	margin-bottom: 0;
 }
 
@@ -460,4 +460,11 @@ a:hover {
 
 #left_info{
 	margin-right:8em;
+}
+
+.fa-home{
+	font-size: 45px;
+	position: relative;
+	left: 1em;
+	bottom: 7.5em;
 }
