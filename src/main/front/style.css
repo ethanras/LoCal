@@ -48,7 +48,7 @@ a:hover {
 	position:relative;
 	margin:0;
 	bottom:1em;
-	left:4em;
+	left:3.75em;
 }
 
 .banner_description{
@@ -64,11 +64,13 @@ a:hover {
 #banner_description{
 	position: relative;
 	bottom: 2em;
-	left: 6em;
+	left: 5em;
 }
 
 .links {
 	margin-left:5em;
+	position: relative;
+	bottom: 1em;
 }
 
 #account, #preferences{
@@ -101,13 +103,58 @@ a:hover {
 .second_h{
 	font-size:35px;
 	font-family:sans-serif;
+	margin-top:0;
 }
+
+.third_h{
+	font-family: sans-serif;
+	font-size: 23px;
+	margin-top: 2em;
+}
+
+#ingredient {
+	width: 18em;
+	height: 2em;
+	font-size: 15px;
+	font-family: arial;
+	text-align:center;
+}
+
+#submit_ingredient{
+	height: 2em;
+	font-size: 15px;
+	font-family: arial;
+	margin-top: 1em;
+}
+
+.fourth_h{
+	font-family:sans-serif;
+	font-size:20px;
+}
+
+#recipes{
+	margin-top: 3em;
+}
+
+#recipe_list{
+	font-family: arial;
+	font-size: 17px;
+}
+
 
 .item {
 	margin-bottom:1em;
 	margin-right:1em;
+	margin-left:1em;
 }
 
+.recipe {
+	margin-bottom:0.5em;
+}
+
+.recipe a {
+	margin-left:1em;
+}
 
 .farm_search{
 	width: 56%;
@@ -120,6 +167,41 @@ a:hover {
 	background-color: #f4f4f4;
 	padding:4em;
 	vertical-align:top;
+}
+
+#location_form{
+	font-family: arial;
+	font-size: 17px;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+#submit_location{
+	height: 2.25em;
+	font-size: 15px;
+}
+
+#location{
+	width: 22em;
+	height: 2em;
+}
+
+#next{
+	font-family: arial;
+	font-size: 17px;
+}
+
+#produce_instructions{
+	text-align: center;
+	font-style: italic;
+	font-size: 17px;
+	font-family:arial;
+	margin-bottom:2em;
+}
+
+#produce_form{
+	font-family: arial;
+	font-size: 17px;
 }
 
 .bottom_section {
