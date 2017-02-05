@@ -300,6 +300,11 @@ a:hover {
 
 #shopping_items{
 	display:inline-block;
+	width:100%;
+}
+
+#checkout{
+	float:right;
 }
 
 #total{
@@ -307,8 +312,7 @@ a:hover {
 	border-bottom:1px solid black;
 	font-family:arial;
 	font-size:18px;
-	margin-left:6em;
-	margin-right:4em;
+	margin-right:2em;
 }
 
 #submit_order {
@@ -340,6 +344,10 @@ a:hover {
 	border-radius: 12px;
 	font-weight: bold;
 	background-color: white;
+}
+
+#form_produce{
+	display:inline-block;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -386,6 +394,24 @@ a:hover {
 }
 
 .fa-pencil{
-	position:relative;
-	bottom:3em;
+	position: relative;
+	bottom: 7em;
+	font-size: 23px;
+	left: 46.75em;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+#prefered_food li{
+	margin-bottom:1em;
+	width:9.5em;
+}
+
+#prefered_food th {
+	border-bottom:solid 1px black;
+}
+
+#food_edit {
+	bottom: 8.5em;
+	left: 48em;
 }
