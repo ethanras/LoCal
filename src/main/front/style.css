@@ -68,7 +68,7 @@ a:hover {
 }
 
 .links {
-	margin-left:5em;
+	margin-left:4em;
 	position: relative;
 	bottom: 1em;
 }
@@ -331,4 +331,61 @@ a:hover {
 
 #recipe_ingredients{
 	text-align:center;
+}
+
+#submit_recipe{
+	font-family: arial;
+	font-size: 17px;
+	border: 3px solid #009900;
+	border-radius: 12px;
+	font-weight: bold;
+	background-color: white;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#preferences_banner{
+	background-color: #f3fcfb;
+}
+
+#preferences_header{
+	font-size: 65px;
+	font-family: sans-serif;
+	padding-left: 2em;
+	display: inline-block;
+	margin-right: 3em;
+	position: relative;
+	bottom: 2.5em;
+	margin-bottom: 0;
+}
+
+#preferences_image{
+	width: 34%;
+	height: 34%;
+	max-width: 34%;
+	min-width: 34%;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 1em;
+}
+
+.content {
+	background-color:#f4f4f4;
+	margin:3em;
+	padding:3em;
+}
+
+.text_style{
+	font-family:arial;
+	font-size:18px;
+}
+
+.white_content{
+	background-color: #ffffff;
+	padding:2em;
+	border:3px solid #009900;
+}
+
+.fa-pencil{
+	position:relative;
+	bottom:3em;
 }

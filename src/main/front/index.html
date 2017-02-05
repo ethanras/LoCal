@@ -15,7 +15,7 @@
 		<img id="banner_image" src="images/banner.jpg" alt="hand holding radishes">	
 		<div class="banner_description">
 			<h1 id="banner_title">LoCal</h1>
-			<p id ="banner_description">Description goes here.</p>
+			<p id ="banner_description">Green, Local & LowCal</p>
 			<div class="links">
 				<a id="account" href="#"><i class="fa fa-user" aria-hidden="true"></i>My Account</a>
 				<a id="preferences" href="#"><i class="fa fa-cog" aria-hidden="true"></i>Preferences</a>
@@ -57,7 +57,7 @@
 			</div>
 
 			<div class="right_bar">
-				<h3 class="third_h">Products from Location Name Currently Selected From Map</h3>
+				<h3 class="third_h" id="provider">Products from Location Name Currently Selected From Map</h3>
 				<p id="produce_instructions">Please select the items you want added to your shopping cart</p>
 				<form id="list_form">
 					<input type="checkbox" name="item" class="item">Cabbage ($3.99) 
@@ -96,7 +96,9 @@
 					<input type="checkbox" name="item" class="item">Leeks (1)
 					<input type="checkbox" name="item" class="item">Dirt (5)
 					<input type="checkbox" name="item" class="item">Mushroom (7)
-					<p id="total">Total: $900.00</p>					
+				</form>
+				<p id="total">Total: $900.00</p>
+				<form id="form_produce">					
 					<input type="submit" value="Checkout" id="submit_order">
 				</form>
 			</div>
@@ -108,6 +110,12 @@
 			<article class="recipe_section">
 			<div class="farm_search">
 				<h2 class="second_h">Recipe Maker</h2>
+				<form id="meal_form">
+					<p id="add_ingredient">Add more ingredients:</p>
+					<input type="text" name="meal" id="ingredient">
+					<input type="submit" value="Add Ingredient" id="submit_ingredient">
+				</form>	
+
 				<h3 class="third_h" id="ingredient_selection">Select your Ingredients</h3>
 				<form id="recipe_ingredients">
 					<input type="checkbox" name="item" class="item">Cabbage
@@ -116,12 +124,10 @@
 					<input type="checkbox" name="item" class="item">Dirt
 					<input type="checkbox" name="item" class="item">Mushroom
 				</form>
+				<form>
+					<input type="submit" value="Find Recipe" id="submit_recipe">
+				</form>
 
-				<form id="meal_form">
-					<p id="add_ingredient">Add more ingredients:</p>
-					<input type="text" name="meal" id="ingredient">
-					<input type="submit" value="Add Ingredient" id="submit_ingredient">
-				</form>	
 			</div>
 
 			<div class="right_bar" id="recipe_right">
