@@ -17,40 +17,80 @@
 			<h1 id="banner_title">LoCal</h1>
 			<p id ="banner_description">Description goes here.</p>
 			<div class="links">
-				<p id="account"><i class="fa fa-user" aria-hidden="true"></i>My Account</p>
-				<p id="preferences"><i class="fa fa-cog" aria-hidden="true">Preferences</i></p>
+				<a id="account" href="#"><i class="fa fa-user" aria-hidden="true"></i>My Account</a>
+				<a id="preferences" href="#"><i class="fa fa-cog" aria-hidden="true">Preferences</i></a>
 			</div>
 		</div>
 	</section>
 
-	<section class="list">
-		<h2 id="list_header">Today's List</h2>
-		<form id="list_form">
-			<input type="checkbox" name="item" value="cabbage" class="item">Cabbage</li>
-			<br>
-			<input type="checkbox" name="item" value="pepper" class="item">Pepper</li>
-			<br>
-			<input type="checkbox" name="item" value="leeks" class="item">Leeks</li>
-			<br>
-			<input type="checkbox" name="item" value="dirt" class="item">Dirt</li>
-			<br>
-			<input type="checkbox" name="item" value="Mushroom" class="item">Mushroom</li>
-		</form>
-	</section>
-
-	<section class="details">
-		<h2>This is another header</h2>
-	</section>
-
 	<section>
-		<h2> Events in your Area</h2>
-		<article>
-			<h3>
+		<article class="list">
+			<h2 class="second_h">Today's List</h2>
+			<form id="list_form">
+				<input type="checkbox" name="item" value="cabbage" class="item">Cabbage
+				<br>
+				<input type="checkbox" name="item" value="pepper" class="item">Pepper
+				<br>
+				<input type="checkbox" name="item" value="leeks" class="item">Leeks
+				<br>
+				<input type="checkbox" name="item" value="dirt" class="item">Dirt
+				<br>
+				<input type="checkbox" name="item" value="Mushroom" class="item">Mushroom
+			</form>
+			<h3>Which ingredient would you like to use?</h3>
+			<form id="meal_form">
+				<input type="text" name="meal" value="user's inserted value">
+				<input type="submit" value="Submit">
+			</form>	
+			<h4>Your recipies for today:</h4>
+			<ol>
+				<li><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Butternut Squash Soup</a></li>
+				<li><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Cream of Mushroom Soup</a></li>
+				<li><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Some Other Soup</a></li>
+			</ol>	
+
+		</article>
+
+		<article class="farm_search">
+			<h2 class="second_h">Find your Food</h2>
+			<form id="location_form">
+				Please enter your address: <input type="text" name="location" value="uwp">
+				<input type="submit" value="Submit">
+			</form>
+			<img src="images/map.png">
+			<a href="#"> Next Location </a>
+			<h4>Products from Location Name Currently Selected From Map</h4>
+			<p>Please select the items you want added to your list</p>
+			<form id="produce_form">
+				<input type="checkbox" name="item" value="cabbage" class="item">Cabbage ($3.99)
+				<br>
+				<input type="checkbox" name="item" value="pepper" class="item">pepper ($3.99)
+				<br>
+				<input type="checkbox" name="item" value="leeks" class="item">Leeks ($3.99)
+				<br>
+				<input type="checkbox" name="item" value="dirt" class="item">Dirt ($3.99)
+				<br>
+				<input type="checkbox" name="item" value="Mushroom" class="item">Mushroom ($3.99)
+			</form>
 		</article>
 	</section>
 
 	<section>
-		<h2> Other Locations you may be Interested in
+		<article class="bottom_section">
+			<h2 class="second_h"> Events in your Area</h2>
+				<h3>Event 1</h3>
+				<p> This is the description of event 1</p>
+				<h3>Event 2</h3>
+				<p> This is the description of event 2</p>
+		</article>
+
+		<article class="bottom_section">
+			<h2 class="second_h"> More Locations</h2>
+			<h3>Farm 1</h3>
+			<p>Location and contact details for farm 1</p>
+			<h3>Farm 2</h3>
+			<p>Location and contact details for farm 2</p>
+		</article>
 	</section>
 </body>
 

@@ -2,9 +2,30 @@ body{
 	margin:0;
 }
 
-.fa {
-	margin-right:0.5em;
+a {
+	color:black;
 }
+
+a:hover {
+	color:grey;
+}
+
+.fa {
+	
+}
+
+
+.fa-user::before{
+	margin-right:0.5em;
+	color:black;
+}
+
+.fa-cog::before{
+	margin-right:0.5em;
+	color:black;
+}
+
+
 .banner {
 	background-color: #f3fcfb;
 	max-width:100%;
@@ -60,23 +81,24 @@ body{
 
 }
 
-#list_form{
+#list_form, #produce-form{
 	font-size:25px;
 	font-family:arial;
 }
 
 .list{
-	width:30%;
-	max-width:30%;
-	min-width:30%;
+	width:31%;
+	max-width:31%;
+	min-width:31%;
 	display:inline-block;
 	box-sizing:border-box;
 	margin:3em;
 	background-color: #f4f4f4;
-	padding:5em;
+	padding:4em;
+	vertical-align:top;
 }
 
-#list_header{
+.second_h{
 	font-size:35px;
 	font-family:sans-serif;
 }
@@ -86,11 +108,28 @@ body{
 	margin-right:1em;
 }
 
-.details{
-	width:70%;
-	max-width: 30%;
-	min-width:30%;
-	display:inline-block;
-	box-sizing:border-box;
+
+.farm_search{
+	width: 56%;
+	display: inline-block;
+	max-width: 56%;
+	min-width: 56%;
+	box-sizing: border-box;
+	margin: 3em;
+	margin-left:1em;
+	background-color: #f4f4f4;
+	padding:4em;
+	vertical-align:top;
 }
 
+.bottom_section {
+	width:42%;
+	max-width:42%;
+	min-width:42%;
+	background-color: #f4f4f4;
+	display:inline-block;
+	box-sizing: border-box;
+	margin:3em;
+	padding:4em;
+	vertical-align: top;
+}
