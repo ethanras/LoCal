@@ -21,7 +21,7 @@ public class EdamamService {
 
     private static String API_ID = "7d211b84";
     private static String APP_KEY = "dd9decfaabc64ebf6dde73ac7533e1fd";
-    // Example Query: https://api.edamam.com/search?q=chicken&app_id=7d211b84&app_key=dd9decfaabc64ebf6dde73ac7533e1fd
+    // Example Query: https://api.edamam.co m/search?q=chicken&app_id=7d211b84&app_key=dd9decfaabc64ebf6dde73ac7533e1fd
     private static String RECIPE_URL = "https://api.edamam.com/search?";
 
     private RestTemplate restTemplate;
