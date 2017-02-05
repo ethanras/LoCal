@@ -10,7 +10,7 @@ $(document).ready(function() {
 		index--;
 		findAddress(index, "");
 	});
-
+/*
 	$('#submit_ingredient').click(function() {
 		$.ajax({
 			url: "http://localhost:8080/submit",
@@ -27,12 +27,13 @@ $(document).ready(function() {
 		var address = $('#location').val();
 		$('#location').val("");
 		console.log(address);
-		findAdress(0, address);
+		findAddress(0, address);
 	});
 });	
 
 function findAddress(index, address) {
 	if (index === 0) {
+		address = address.replace(/ /g, '+');
 		$.ajax({
 			url: "http://localhost:8080/find",
 			type: 'POST',
