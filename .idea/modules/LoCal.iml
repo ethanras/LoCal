@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="LoCal" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../build/classes/main" />
     <output-test url="file://$MODULE_DIR$/../../build/classes/test" />
@@ -60,5 +65,6 @@
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-validator:5.3.4.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.1.RELEASE" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.16.12" level="project" />
   </component>
 </module>
