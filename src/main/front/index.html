@@ -11,11 +11,12 @@
 </head>
 
 <body>
+<div class="fixed">
 	<section class="banner">
 		<img id="banner_image" src="images/banner.jpg" alt="hand holding radishes">	
 		<div class="banner_description">
 			<h1 id="banner_title">LoCal</h1>
-			<p id ="banner_description">Green, Local & LowCal</p>
+			<p id ="banner_description">Green, Local & Low Cal</p>
 			<div class="links">
 				<a id="account" href="account.html"><i class="fa fa-user" aria-hidden="true"></i>My Account</a>
 				<a id="preferences" href="settings.html"><i class="fa fa-cog" aria-hidden="true"></i>Preferences</a>
@@ -92,7 +93,12 @@
 					<input type="text" name="meal" id="ingredient">
 					<input type="submit" value="Add Ingredient" id="submit_ingredient">
 				</form>	
-
+				<h3 class="third_h" id="ingredient_selection">Select your Preferences</h3>
+				<form id="recipe_preferences" class= "text_style">
+					<input type="checkbox" name="item" class="item">Gluten Free
+					<input type="checkbox" name="item" class="item">Shellfish Free
+					<input type="checkbox" name="item" class="item">Dairy Free
+				</form>
 				<h3 class="third_h" id="ingredient_selection">Select your Ingredients</h3>
 				<form id="recipe_ingredients">
 					<input type="checkbox" name="item" class="item">Cabbage
@@ -165,6 +171,7 @@
 				</article>
 		</div>
 	</section>
+	</div>
 </body>
 
 </html>

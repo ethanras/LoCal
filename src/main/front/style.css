@@ -381,6 +381,7 @@ a:hover {
 	background-color:#f4f4f4;
 	margin:3em;
 	padding:3em;
+	max-width:100%;
 }
 
 .text_style{
@@ -392,6 +393,7 @@ a:hover {
 	background-color: #ffffff;
 	padding:2em;
 	border:3px solid #009900;
+	max-width:100%;
 }
 
 .fa-pencil{
@@ -467,4 +469,17 @@ a:hover {
 	position: relative;
 	left: 1em;
 	bottom: 7.5em;
+}
+
+.fixed {
+	width:1350px;
+}
+
+#other_edit{
+	bottom: 6em;
+	left: 48em;
+}
+
+#recipe_preferences{
+	text-align:center;
 }
