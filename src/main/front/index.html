@@ -12,7 +12,7 @@
 
 <body>
 	<section class="banner">
-		<img id="banner_image" src="images/banner.jpg">	
+		<img id="banner_image" src="images/banner.jpg" alt="hand holding radishes">	
 		<div class="banner_description">
 			<h1 id="banner_title">LoCal</h1>
 			<p id ="banner_description">Description goes here.</p>
@@ -24,20 +24,88 @@
 	</section>
 
 	<section>
-		<article class="list">
-			<h2 class="second_h">Today's List</h2>
-			<form id="list_form">
-				<input type="checkbox" name="item" class="item">Cabbage
+		<article id="food_search">
+			<div class="farm_search">
+				<h2 class="second_h">Buy your Food</h2>
+				<form id="location_form">
+					Please enter your address: <input type="text" name="location" value="Enter your address" id="location">
+					<input type="submit" value="Submit" id="submit_location">
+				</form>
+				<div id="map">
+				    <script>
+				      function initMap() {
+				        var uluru = {lat: -25.363, lng: 131.044};
+				        var map = new google.maps.Map(document.getElementById('map'), {
+				          zoom: 4,
+				          center: uluru
+				        });
+				        var marker = new google.maps.Marker({
+				          position: uluru,
+				          map: map
+				        });
+				      }
+				    </script>
+				    <script async defer
+				    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDontXg9FANm3AbQIxs7ysmgIvjKw3yLJM&callback=initMap">
+				    </script>
+			    </div>
 				<br>
-				<input type="checkbox" name="item" class="item">Pepper
+				<a href="#" id="previous"> &laquo; Previous Location </a>
+				<a href="#" id="next"> Next Location &raquo; </a>
+			</div>
+
+			<div class="right_bar">
+				<h3 class="third_h">Products from Location Name Currently Selected From Map</h3>
+				<p id="produce_instructions">Please select the items you want added to your list</p>
+				<form id="list_form">
+					<input type="checkbox" name="item" class="item">Cabbage ($3.99) 
+					<br>
+					<input type="checkbox" name="item" class="item">Pepper ($3.99)
+
+					<br>
+					<input type="checkbox" name="item" class="item">Leeks ($3.99)
+
+					<br>
+					<input type="checkbox" name="item" class="item">Dirt ($3.99)
+
+					<br>
+					<input type="checkbox" name="item" class="item">Mushroom ($3.99)
+				</form>
+				<p id="math">
+				<i class="fa fa-plus-square-o math" aria-hidden="true"></i><i class="fa fa-minus-square-o" aria-hidden="true"></i>
 				<br>
-				<input type="checkbox" name="item" class="item">Leeks
+				<i class="fa fa-plus-square-o math" aria-hidden="true"></i><i class="fa fa-minus-square-o" aria-hidden="true"></i>
 				<br>
-				<input type="checkbox" name="item" class="item">Dirt
+				<i class="fa fa-plus-square-o math" aria-hidden="true"></i><i class="fa fa-minus-square-o" aria-hidden="true"></i>
 				<br>
-				<input type="checkbox" name="item" class="item">Mushroom
-			</form>
-			<h3 class="third_h">Which ingredient would you like to use?</h3>
+				<i class="fa fa-plus-square-o math" aria-hidden="true"></i><i class="fa fa-minus-square-o" aria-hidden="true"></i>
+				<br>
+				<i class="fa fa-plus-square-o math" aria-hidden="true"></i><i class="fa fa-minus-square-o" aria-hidden="true"></i>
+				</p>
+			</div>
+		</article>
+
+		<article>
+				<h2 class="second_h">Grocery List</h2>
+				<form id="produce_form">
+					<input type="checkbox" name="item" class="item">Cabbage
+					<br>
+					<input type="checkbox" name="item" class="item">Pepper
+					<br>
+					<input type="checkbox" name="item" class="item">Leeks
+					<br>
+					<input type="checkbox" name="item" class="item">Dirt
+					<br>
+					<input type="checkbox" name="item" class="item">Mushroom
+					<br>
+					<input type="submit" value="Checkout" id="submit_order">
+				</form>
+		</article>
+	</section>
+
+	<section>
+			<article class="list">
+			<h3 class="third_h">Select your ingredients:</h3>
 			<form id="meal_form">
 				<input type="text" name="meal" id="ingredient">
 				<input type="submit" value="Submit" id="submit_ingredient">
@@ -48,45 +116,53 @@
 				<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Cream of Mushroom Soup</a></li>
 				<li class="recipe"><a target="_blank" href="http://allrecipes.com/recipes/16369/soups-stews-and-chili/soup/">Some Other Soup</a></li>
 			</ol>	
-
-		</article>
-
-		<article class="farm_search">
-			<h2 class="second_h">Find your Food</h2>
-			<form id="location_form">
-				Please enter your address: <input type="text" name="location" value="Enter your address" id="location">
-				<input type="submit" value="Submit" id="submit_location">
-			</form>
-			<img src="images/map.png">
-			<a href="#" id="next"> Next Location </a>
-			<h3 class="third_h">Products from Location Name Currently Selected From Map</h3>
-			<p id="produce_instructions">Please select the items you want added to your list</p>
-			<form id="produce_form">
-				<input type="checkbox" name="item" class="item">Cabbage ($3.99)
-				<input type="checkbox" name="item" class="item">pepper ($3.99)
-				<input type="checkbox" name="item" class="item">Leeks ($3.99)
-				<input type="checkbox" name="item" class="item">Dirt ($3.99)
-				<input type="checkbox" name="item" class="item">Mushroom ($3.99)
-			</form>
 		</article>
 	</section>
 
 	<section>
-		<article class="bottom_section">
+		<div class="bottom_section">
 			<h2 class="second_h"> Events in your Area</h2>
-				<h3 class="third_h">Event 1</h3>
-				<p> This is the description of event 1</p>
-				<h3 class="third_h">Event 2</h3>
-				<p> This is the description of event 2</p>
-		</article>
+				<article class="blue">
+					<h3 class="third_h">"Lots to Love" February Sale at St Jacobs</h3>
+					<p class="bottom_blurbs">
+						<q>St. Jacobs Farmers’ Market & Flea Market is jazzing up your February with a “Lots to Love” sale! Throughout Market, food and craft vendors participate with their own unique offers and specials.</q>
+						<br><br>
+						<a href="http://www.stjacobs.com/blog/lots-to-love-at-st-jacobs-farmers-market-flea-market.htm"> See More </a>
+					</p>
+				</article>
+				<article class="blue">
+					<h3 class="third_h">Antiques and Collectibles February Sale at Market Road Antiques</h3>
+					<p class="bottom_blurbs">
+						<q>February is an especially great time to visit Market Road Antiques because prices are rolled back on almost everything: antique furniture, antique glass and china, collectibles, vinyl records, estate jewelry, vintage clothing, art, books and toys!</q>
+						<br><br>
+						<a href="http://www.stjacobs.com/blog/?ww_blogTagID=4EBD38A1-1050-4C58-99C0-24C7E045DAC8&Tag=Event%20Announcement">See More</a>
+					</p>
+				</article>
+		</div>
 
-		<article class="bottom_section">
+		<div class="bottom_section">
 			<h2 class="second_h"> More Locations</h2>
-			<h3>Farm 1</h3>
-			<p>Location and contact details for farm 1</p>
-			<h3>Farm 2</h3>
-			<p>Location and contact details for farm 2</p>
-		</article>
+				<article class="blue">
+					<h3 class="third_h">Martin's Family Fruit Farm</h3>
+					<p class="bottom_blurbs">
+						<q>At Martin’s Family Fruit Farm, we believe in the wholesome, nourishing goodness of apples fresh from the orchard.</q>
+						<p class="bottom_blurbs"><i class="fa fa-address-book" aria-hidden="true"></i> Address: 1420 Lobsinger Line, Waterloo</p>
+						<p class="bottom_blurbs"><i class="fa fa-phone" aria-hidden="true"></i> Tel: 519.664.2750</p>
+						<p class="bottom_blurbs"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <a href="martin.apples@gmail.com">martin.apples@gmail.com</a></p>
+						<p class="bottom_blurbs"><i class="fa fa-globe" aria-hidden="true"></i> Website: <a href="http://www.martinsapples.com/">http://www.martinsapples.com/</a></p>
+					</p>
+				</article>
+				<article class="blue">
+					<h3 class="third_h">Snyder's Farm</h3>
+					<p class="bottom_blurbs">
+						<q>It Just wouldn't be fall without a stroll through a corn maze! Our complicated maze has a corn tower and games throughout. Fun for the whole family.</q>
+						<p class="bottom_blurbs"><i class="fa fa-address-book" aria-hidden="true"></i> Address: 936685 Blenheim Rd, Bright</p>
+						<p class="bottom_blurbs"><i class="fa fa-phone" aria-hidden="true"></i> Tel: 519-632-7356</p>
+						<p class="bottom_blurbs"> <a href="info@snydersfamilyfarm.com"><i class="fa fa-envelope" aria-hidden="true"></i> Email: info@snydersfamilyfarm.com</a></p>
+						<p class="bottom_blurbs"><i class="fa fa-globe" aria-hidden="true"></i> Website: <a href="http://www.snydersfamilyfarm.com/">http://www.snydersfamilyfarm.com/</a></p>
+					</p>
+				</article>
+		</div>
 	</section>
 </body>
 

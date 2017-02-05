@@ -11,7 +11,7 @@ a:hover {
 }
 
 .fa {
-	
+	margin-right:1em;	
 }
 
 
@@ -79,13 +79,10 @@ a:hover {
 	margin-right:3em;
 }
 
-#preferences{
-
-}
-
 #list_form, #produce-form{
-	font-size:25px;
+	font-size:18px;
 	font-family:arial;
+	display:inline-block;
 }
 
 .list{
@@ -97,7 +94,6 @@ a:hover {
 	margin:3em;
 	background-color: #f4f4f4;
 	padding:4em;
-	vertical-align:top;
 }
 
 .second_h{
@@ -109,7 +105,6 @@ a:hover {
 .third_h{
 	font-family: sans-serif;
 	font-size: 23px;
-	margin-top: 2em;
 }
 
 #ingredient {
@@ -156,17 +151,41 @@ a:hover {
 	margin-left:1em;
 }
 
+#food_search{
+	background-color: #f4f4f4;
+	box-sizing: border-box;	
+	margin:3em;
+}
+
 .farm_search{
-	width: 56%;
+	width: 50%;
 	display: inline-block;
-	max-width: 56%;
-	min-width: 56%;
-	box-sizing: border-box;
+	max-width: 50%;
+	min-width: 50%;
 	margin: 3em;
 	margin-left:1em;
-	background-color: #f4f4f4;
 	padding:4em;
+	padding-top:1em;
+	padding-right:0;
 	vertical-align:top;
+}
+
+.right_bar{
+	display: inline-block;
+	width: 31%;
+	max-width: 31%;
+	min-width: 31%;
+	padding: 3em;
+	padding-top: 10em;
+}
+
+.math{
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+#math{
+	display:inline-block;
 }
 
 #location_form{
@@ -186,9 +205,24 @@ a:hover {
 	height: 2em;
 }
 
+#map{
+	height:35em;
+}
+
+#previous{
+	font-family: arial;
+	font-size: 17px;
+	color: darkgreen;
+	font-weight: bold;
+	padding-left: 6.5em;
+}
+
 #next{
 	font-family: arial;
 	font-size: 17px;
+	color: darkgreen;
+	font-weight: bold;
+	padding-left: 6.5em;
 }
 
 #produce_instructions{
@@ -214,4 +248,15 @@ a:hover {
 	margin:3em;
 	padding:4em;
 	vertical-align: top;
+}
+
+.blue{
+	background-color: #f3fcfb;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+.bottom_blurbs{
+	font-size:17px;
+	font-family:arial;
 }
