@@ -10,4 +10,8 @@ import lombok.*;
 public class Ingredient {
     private String text;
     private Float weight;
+
+    public Ingredient(String text) {
+        this.text = text;
+    }
 }

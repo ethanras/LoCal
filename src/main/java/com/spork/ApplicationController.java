@@ -1,6 +1,7 @@
 package com.spork;
 
 import com.spork.model.Ingredient;
+import com.spork.model.Recipe;
 import com.spork.service.EdamamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -33,6 +34,13 @@ public class ApplicationController {
         return "Hello World";
     }
 
+    @CrossOrigin
+    @GetMapping("/test")
+    public @ResponseBody List<Recipe> test() {
+        Ingredient potato = new Ingredient("potato");
+        Ingredient leek = new Ingredient("leek");
+        return edamamService.getRecipesForAllIngredients(potato, Arrays.asList(leek));
+    }
 
     @CrossOrigin
     @GetMapping("/ethansshit")
