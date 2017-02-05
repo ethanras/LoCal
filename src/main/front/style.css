@@ -351,7 +351,7 @@ a:hover {
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-#preferences_banner{
+#preferences_banner, #account_header{
 	background-color: #f3fcfb;
 }
 
@@ -414,4 +414,27 @@ a:hover {
 #food_edit {
 	bottom: 8.5em;
 	left: 48em;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#account_banner{
+	width: 34%;
+	height: 34%;
+	max-width: 34%;
+	min-width: 34%;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 1em;
+}
+
+#account_header h1{
+	display: inline-block;
+	font-size: 70px;
+	margin-left: 2em;
+	margin-right: 2.25em;
+	position: relative;
+	bottom: 2.5em;
+	margin-bottom: 0;
 }
